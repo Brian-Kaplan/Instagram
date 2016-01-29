@@ -67,7 +67,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedCell
         let imageURL = NSURL( string: self.feed![indexPath.row].valueForKeyPath("images.low_resolution.url") as! String)
         let profilePicURL = NSURL( string: self.feed![indexPath.row].valueForKeyPath("user.profile_picture") as! String)
