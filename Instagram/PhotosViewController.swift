@@ -12,10 +12,15 @@ import AFNetworking
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var feed: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         // Do any additional setup after loading the view.
         let clientId = "e05c462ebd86446ea48a5af73769b602"
@@ -37,9 +42,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
-//                            NSLog("response: \(responseDictionary)")
-                            self.feed = responseDictionary["data"] as? [NSDictionary]
-                            NSLog("response: \(self.feed)")
+                       self.feed = responseDictionary["data"] as? [NSDictionary]
+                       self.tableView.reloadData()
                     }
                 }
                 else{
@@ -63,10 +67,15 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! FeedCell
         
+        let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedCell
+        let imageURL = NSURL( string: self.feed![indexPath.row].valueForKeyPath("images.low_resolution.url") as! String)
+        let profilePicURL = NSURL( string: self.feed![indexPath.row].valueForKeyPath("user.profile_picture") as! String)
+        let username = self.feed![indexPath.row].valueForKeyPath("user.username") as! String
         
-        
+        cell.cellPicture.setImageWithURL(imageURL!)
+        cell.cellProfilePicture.setImageWithURL(profilePicURL!)
+        cell.cellUsername.text = username
         return cell
     }
     

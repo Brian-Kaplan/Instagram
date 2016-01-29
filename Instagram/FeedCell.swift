@@ -13,6 +13,9 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var cellPicture: UIImageView!
     
+    @IBOutlet weak var cellUsername: UILabel!
+    
+    @IBOutlet weak var cellProfilePicture: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
