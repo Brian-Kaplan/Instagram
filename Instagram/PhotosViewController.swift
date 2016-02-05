@@ -125,8 +125,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                             self.isMoreDataLoading = false
                             // Stop the loading indicator
                             self.loadingMoreView!.stopAnimating()
-//                            let rowToSelect = NSIndexPath(forRow: 0, inSection: 0)
-//                            self.tableView.scrollToRowAtIndexPath(rowToSelect, atScrollPosition: .Top, animated: false)
                         
                             
                     }

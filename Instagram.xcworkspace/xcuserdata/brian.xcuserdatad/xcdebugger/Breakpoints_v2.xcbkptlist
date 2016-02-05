@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotosViewController.swift"
-            timestampString = "476327637.759071"
+            timestampString = "476328015.024766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "refreshControlAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagram/PhotosViewController.swift"
-            timestampString = "476327669.984163"
+            timestampString = "476328015.024766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "networkRequest()"
             landmarkType = "5">
          </BreakpointContent>
